@@ -1,0 +1,5 @@
+base_model/*.safetensors filter=lfs diff=lfs merge=lfs -text
+base_model/*.bin filter=lfs diff=lfs merge=lfs -text
+adapters/*.safetensors filter=lfs diff=lfs merge=lfs -text
+adapters/*.bin filter=lfs diff=lfs merge=lfs -text
+adapters/*.pt filter=lfs diff=lfs merge=lfs -text
