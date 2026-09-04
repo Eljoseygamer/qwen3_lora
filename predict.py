@@ -30,8 +30,8 @@ def predict(texts, model, tokenizer, device):
 
 
 def main():
-    input_dir = os.environ.get('inputDataset') or (sys.argv[1] if len(sys.argv) > 1 else '/tira-data/input')
-    output_dir = os.environ.get('outputDir') or (sys.argv[2] if len(sys.argv) > 2 else '/tira-data/output')
+    input_dir = os.environ.get('inputDataset', '/input')
+    output_dir = os.environ.get('outputDir', '/output')
 
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     print(f'Device: {device}')
