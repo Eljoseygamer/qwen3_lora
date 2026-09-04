@@ -30,7 +30,7 @@ def predict(texts, model, tokenizer, device):
 
 
 def main():
-    input_path = sys.argv[1] if len(sys.argv) > 1 else os.environ.get('inputDataset', '/input')
+    input_dir = sys.argv[1] if len(sys.argv) > 1 else os.environ.get('inputDataset', '/input')
     output_dir = sys.argv[2] if len(sys.argv) > 2 else os.environ.get('outputDir', '/output')
 
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
