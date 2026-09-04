@@ -20,7 +20,8 @@ def predict(texts, model, tokenizer, device):
     for i in tqdm(range(0, len(texts), BATCH_SIZE), desc='Predicting'):
         batch = texts[i:i + BATCH_SIZE]
         enc = tokenizer(batch, truncation=True, max_length=MAX_LEN,
-                        padding=True, return_tensors='pt').to(device)
+                padding=True, return_tensors='pt')
+        enc = {k: v.to(model.device) for k, v in enc.items()}
         with torch.no_grad():
             logits = model(**enc).logits
         probs = torch.softmax(logits, dim=-1)[:, 1].float().cpu().numpy()
