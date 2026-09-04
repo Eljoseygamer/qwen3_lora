@@ -13,4 +13,4 @@ COPY shared/ shared/
 COPY base_model/ base_model/
 COPY adapters/ adapters/
 COPY predict.py .
-CMD ["python3", "predict.py"]
+CMD python3 predict.py
